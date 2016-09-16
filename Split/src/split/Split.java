@@ -1,27 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package split;
 
 /**
  *
  * @author cessito
  */
+import java.util.Scanner;
 public class Split {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
-        // TODO code application logic here
-        String girl = "Cess is a good girl and passionate about programming";
-        String[] tokens = girl.split(" ");
-        for(String s:tokens){
-            System.out.println(s);
+       
+        Scanner gurl = new Scanner(System.in);
+        System.out.println("Enter a new sentence");
+         String girl=gurl.nextLine();
+          
+         
+        
+        String[] token = girl.split(" ");
+        for(int i=0; i< token.length; i++) {
+            System.out.println(token[i]);
         }
-        girl = "This     program  splits a string based on space";
-        tokens =girl.split("\\s+");
+        
     }
 }
