@@ -13,13 +13,14 @@ public class Read2 {
         
         StringTokenizer st = new StringTokenizer(input.nextLine());
         
-        System.out.println("Total tokens :" + st.countTokens());
+        //System.out.println("Total tokens :" + st.countTokens());
        
-        //while  (st.hasMoreTokens()){
-          //  System.out.println("Next token :" + st.nextToken());
+        while  (st.hasMoreTokens()){
+            System.out.println("Next token :" + st.nextToken());
             
         }
         
     }
+}
     
 
