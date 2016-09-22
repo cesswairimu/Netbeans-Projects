@@ -9,11 +9,14 @@ package lexical;
  *
  * @author cessito
  */
-import java.util.regex.*;
+import java.util.*;
 public class Regexample {
     public static void main(String [] args){
-    System.out.println(Pattern.matches("[a-zA-Z0-9]{6}", "arun32"));
-    
+    while(true){
+    Scanner input = new Scanner(System.in);
+    String s  = input.nextLine();
+    System.out.println(s.matches("[a-zA-Z]+[0-9]*{4}"));
+    }
     
 }
 }
