@@ -19,7 +19,7 @@ public class Lexical {
          StringTokenizer st = new StringTokenizer(str.nextLine());
         Pattern tr = Pattern.compile("[a-zA-Z0-9]");
        
-       // String Z [] = [A-Z a-z]+[0-9]*;
+       // String Z [] = [A-Z a-z]+[0-9]*;Enter something her
         
        
                 while( st.hasMoreTokens()){

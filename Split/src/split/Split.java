@@ -17,7 +17,7 @@ public class Split {
           
          
         
-        String[] token = girl.split(" ");
+        String[] token = girl.split("o");
         for(int i=0; i< token.length; i++) {
             System.out.println(token[i]);
         }
