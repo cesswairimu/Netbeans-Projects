@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class AlphaNumeric {
     public static  void main(String[] args){
         Scanner input = new Scanner(System.in);
+        System.out.println("You might want to put smth here");
         StringTokenizer s = new StringTokenizer(input.nextLine());
     AlphaNumeric a = new AlphaNumeric();
     if(a.IsAlphaNumeric(s.nextToken())){
