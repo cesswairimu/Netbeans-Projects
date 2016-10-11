@@ -14,12 +14,14 @@ public class DesignLexer { //class
     , "short", "static", "super", "switch", "synchronized", "this", "throw", "throws",
     "transient", "try", "true", "void", "while"};
   
-    String operators [] = {"+"};
-    String separators [] = {};
+    String operators [] = {"+","=", "-", "/","%","*","++","--","!","==","!=","<",">","<=",">=","&&",
+                            "||", "?:", "~","<<",">>",">>>","&","^","|"};
+    String separators [] = {"()", "{}", "[]",";",",",".",":"}; //"(",")","[","]","{","}"};
     
     System.out.println("You might wonna type something here"); //prompting the user to input something
     String str = cess.nextLine(); // storing the input(scanner) in a vacriable "str"
-    StringTokenizer st = new StringTokenizer(str, " "); //spliting the input string using delimeter space
+    StringTokenizer st = new StringTokenizer(str); //spliting the input string using delimeter space
+  
  
     while (st.hasMoreTokens()){ //looping through the string
         String token = st.nextToken(); //output ing each token of the input string
@@ -30,16 +32,17 @@ public class DesignLexer { //class
         else if(Arrays.asList(operators).contains(token)){
             System.out.println(token +" is an operator");
         }
-            
+        
         else if(token.matches("[a-zA-Z]+[0-9]*")){
                 System.out.println( token +" is an identifier");
         }
          else if(Arrays.asList(separators).contains(token)){
              System.out.println(token + " is a separator");
          }
-         else if(token.matches("#[a-zA-Z]+[0-9]*")){
-                System.out.println( token +" is an identifier");
-         }
+         
+                 //else if(token.matches("[a-z]")){//("(/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/ )|(//.*)"{
+               // System.out.println( token+" is a comment");
+         //}
          else{
        System.out.println("the word is " +token);
        
