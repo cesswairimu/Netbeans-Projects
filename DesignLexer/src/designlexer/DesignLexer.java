@@ -13,6 +13,10 @@ public class DesignLexer { //class
     "long", "new", "null", "package", "public","private", "protected", "return"
     , "short", "static", "super", "switch", "synchronized", "this", "throw", "throws",
     "transient", "try", "true", "void", "while"};
+  
+    String operators [] = {"+"};
+    String separators [] = {};
+    
     System.out.println("You might wonna type something here"); //prompting the user to input something
     String str = cess.nextLine(); // storing the input(scanner) in a vacriable "str"
     StringTokenizer st = new StringTokenizer(str, " "); //spliting the input string using delimeter space
@@ -23,7 +27,20 @@ public class DesignLexer { //class
             System.out.println(token + " is a keyword");
             
         }
-        else{
+        else if(Arrays.asList(operators).contains(token)){
+            System.out.println(token +" is an operator");
+        }
+            
+        else if(token.matches("[a-zA-Z]+[0-9]*")){
+                System.out.println( token +" is an identifier");
+        }
+         else if(Arrays.asList(separators).contains(token)){
+             System.out.println(token + " is a separator");
+         }
+         else if(token.matches("#[a-zA-Z]+[0-9]*")){
+                System.out.println( token +" is an identifier");
+         }
+         else{
        System.out.println("the word is " +token);
        
         
