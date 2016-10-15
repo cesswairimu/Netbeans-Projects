@@ -16,7 +16,7 @@ public class DesignLexer { //class
   
     String operators [] = {"+","=", "-", "/","%","*","++","--","!","==","!=","<",">","<=",">=","&&",
                             "||", "?:", "~","<<",">>",">>>","&","^","|"};
-    String separators [] = {"()", "{}", "[]",";",",",".",":"}; //"(",")","[","]","{","}"};
+    String separators [] = {",()", "{}", "[]",";",",",".",":","(",")"}; //"(",")","[","]","{","}"};
     
     System.out.println("You might wonna type something here"); //prompting the user to input something
     String str = cess.nextLine(); // storing the input(scanner) in a vacriable "str"
@@ -29,13 +29,20 @@ public class DesignLexer { //class
             System.out.println(token + " is a keyword");
             
         }
+        else if(token.matches("[0-9]*")){
+                System.out.println(token + " is a digit" );
+        }
         else if(Arrays.asList(operators).contains(token)){
             System.out.println(token +" is an operator");
         }
-        
+        else if(token.matches("[0-9]+[a-zA-Z]*")){
+               System.out.println(token+ " is a string literal" );
+        }
         else if(token.matches("[a-zA-Z]+[0-9]*")){
                 System.out.println( token +" is an identifier");
         }
+         
+         
          else if(Arrays.asList(separators).contains(token)){
              System.out.println(token + " is a separator");
          }
