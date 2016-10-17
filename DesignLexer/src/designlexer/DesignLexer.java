@@ -2,11 +2,11 @@
 package designlexer;
 
 
-import java.util.Arrays;
+//import java.util.Arrays;
 import java.util.*; //allows input for scanner
 public class DesignLexer { //class 
     public static void main(String[] args) { //main method
-    Scanner cess = new Scanner(System.in); // reading the scanner input
+     
     String [] keywords = {"abstract","boolean","goto", "const", "native", "volatile","break","byte","case", "catch",
     "char", "class", "continue", "default", "do","double","else","extends","enum","false",
     "final", "finally","float","for","if","implements","import", "instanceof", "int", "interface",
@@ -16,9 +16,11 @@ public class DesignLexer { //class
   
     String operators [] = {"+","=", "-", "/","%","*","++","--","!","==","!=","<",">","<=",">=","&&",
                             "||", "?:", "~","<<",">>",">>>","&","^","|"};
-    String separators [] = {",()", "{}", "[]",";",",",".",":","(",")"}; //"(",")","[","]","{","}"};
+    String separators [] = {";",",",".",":","(",")", "[","]","{","}"}; 
+   
     
     System.out.println("You might wonna type something here"); //prompting the user to input something
+     Scanner cess = new Scanner(System.in);// reading the scanner input
     String str = cess.nextLine(); // storing the input(scanner) in a vacriable "str"
     StringTokenizer st = new StringTokenizer(str); //spliting the input string using delimeter space
   
@@ -46,15 +48,15 @@ public class DesignLexer { //class
          else if(Arrays.asList(separators).contains(token)){
              System.out.println(token + " is a separator");
          }
-         
-                 //else if(token.matches("[a-z]")){//("(/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/ )|(//.*)"{
-               // System.out.println( token+" is a comment");
-         //}
+                 else if(token.matches("[//]+[A-Za-z0-9]*")){ //("(/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/ )|(//.*)"{
+               System.out.println( token+" is a comment");
+         }
+           
          else{
-       System.out.println("the word is " +token);
-       
+       System.out.println("Sorry" +token +" is not recognized in java");
+    
         
-        
+                 
     }
 
    
