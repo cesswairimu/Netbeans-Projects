@@ -34,6 +34,9 @@ public class DesignLexer { //class
         else if(token.matches("[0-9]*")){
                 System.out.println(token + " is a digit" );
         }
+        else if(token.matches("[+,-]+[0-9]*")){
+                System.out.println(token + " is a signed digit" );
+        }
         else if(Arrays.asList(operators).contains(token)){
             System.out.println(token +" is an operator");
         }
