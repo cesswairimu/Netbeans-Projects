@@ -1,32 +1,24 @@
 
-package designlexer;
-
-
 //import java.util.Arrays;
 import java.util.*; //allows input for scanner
-public class DesignLexer { //class 
+public class LexerDesign { //class 
     public static void main(String[] args) { //main method
      
-    String [] keywords = {"abstract","boolean","goto", "const", "native", "volatile","break","byte","case", "catch",
-    "char", "class", "continue", "default", "do","double","else","extends","enum","false",
-    "final", "finally","float","for","if","implements","import", "instanceof", "int", "interface",
-    "long", "new", "null", "package", "public","private", "protected", "return"
-    , "short", "static", "super", "switch", "synchronized", "this", "throw", "throws",
-    "transient", "try", "true", "void", "while"};
+    String [] keywords = {"each","do","while","break","finally","if","this","null","long","new","short"};
   
     String operators [] = {"+","=", "-", "/","%","*","++","--","!","==","!=","<",">","<=",">=","&&",
                             "||", "?:", "~","<<",">>",">>>","&","^","|"};
     String separators [] = {";",",",".",":","(",")", "[","]","{","}"}; 
    
     
-    System.out.println("You might wonna type something here"); //prompting the user to input something
-     Scanner cess = new Scanner(System.in);// reading the scanner input
-    String str = cess.nextLine(); // storing the input(scanner) in a vacriable "str"
-    StringTokenizer st = new StringTokenizer(str); //spliting the input string using delimeter space
+    System.out.println("Input anything."); 
+     Scanner getty = new Scanner(System.in);
+    String str = getty.nextLine(); 
+    StringTokenizer st = new StringTokenizer(str);
   
  
-    while (st.hasMoreTokens()){ //looping through the string
-        String token = st.nextToken(); //output ing each token of the input string
+    while (st.hasMoreTokens()){ 
+        String token = st.nextToken();
         if (Arrays.asList(keywords).contains(token)){
             System.out.println(token + " is a keyword");
             
@@ -57,7 +49,7 @@ public class DesignLexer { //class
          }
            
          else{
-       System.out.println("Sorry" +token +" is not recognized in java");
+       System.out.println("Sorry" +token +" is not recognized by java");
     
         
                  
@@ -70,3 +62,4 @@ public class DesignLexer { //class
     
     }
 }
+
